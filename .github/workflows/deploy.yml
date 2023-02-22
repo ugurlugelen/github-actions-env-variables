@@ -10,8 +10,8 @@ jobs:
   test:
     env:
       MONGODB_CLUSTER_ADDRESS: cluster0.lqjarrq.mongodb.net
-      MONGODB_USERNAME: augurlugelen
-      MONGODB_PASSWORD: 3gKs7dY7VNKH5YOr
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       PORT: 8080
     runs-on: ubuntu-latest
     steps:
@@ -36,4 +36,4 @@ jobs:
     steps:
       - name: Output information
         run: |        
-          echo "$MONGODB_NAME"
+          echo "$MONGODB_DB_NAME"
